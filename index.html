@@ -408,44 +408,22 @@ TweenMax.to(counter, 5, {
 </script>
 <script  src="js/accordian.js"></script>
 <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-        var spinner = $('#loader');
-        const scriptURLC ='your google sheet script'
-        const serverlessForm = document.forms['serverless-form'];
-
-        serverlessForm.addEventListener('submit', e => {
-            e.preventDefault();
-            spinner.show();
-
-
-            fetch(scriptURLC, {
-                    method: 'POST',
-                    body: new FormData(serverlessForm)
-                })
-                .then(res => {
-
-                    console.log(res);
-                    spinner.hide();
-
-                    if (res['status'] == 200) {
-                        swal("Your form has been submitted!",
-                            "We will get back to you soon. Have a great day!", "success");
-                        return true;
-
-                    } else {
-                        swal("Something went wrong!", "Please try after some time", "error");
-
-                    }
-                    document.getElementById('submitForm').classList.remove('loading');
-                })
-                .catch(error => {
-
-                    swal("Something went wrong!", "Please try after some time", "error");
-                    // todo enable submit button
-
-                })
-        });
-    </script>
+		$("#myForm").submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+    url: "YOUR_ZAPIER_WEBHOOK_URL_GOES_HERE",
+    type: "post",
+    data: $("#myForm").serialize(),
+    success: function() {
+      // Redirect to another success page
+      window.location = "http://google.com";
+    }
+  });
+});
+</script>	
+	
 
 
 </body>
