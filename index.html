@@ -56,7 +56,7 @@
      <div class="banner-form-outer">
      <h3>Get Your Initial Price Estimate Now!</h3>
      <p>Please Submit Your Free Hair Analysis Form</p>
-     <form id="myForm" action="https://hooks.zapier.com/hooks/catch/6789870/bukb8vk/" method="POST">
+     <form id="myForm">
      <div class="form-field"><label>First Name <span>:</span></label> <input type="text" id="fname" name="fname" placeholder=""></div>
      <div class="form-field"><label>Last Name <span>:</span></label> <input type="text" id="lname" name="lname" placeholder=""></div>
      <div class="form-field"><label>Email Address <span>:</span></label> <input type="text" id="mail" name="mail" placeholder=""></div>
@@ -413,7 +413,7 @@ TweenMax.to(counter, 5, {
 		$("#myForm").submit(function(e) {
   e.preventDefault();
   $.ajax({
-    url: "YOUR_ZAPIER_WEBHOOK_URL_GOES_HERE",
+    url: "https://hooks.zapier.com/hooks/catch/6789870/bukb8vk/",
     type: "post",
     data: $("#myForm").serialize(),
     success: function() {
