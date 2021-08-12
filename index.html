@@ -8,19 +8,6 @@
 <link href="css/media.css" rel="stylesheet" type="text/css">
 <link href="css/font.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-	<style>
-        #loader {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, .75) url(img/spinner.svg) no-repeat center center; //include your spinner url
-            z-index: 10000
-        }
- </style>
 </head>
 <body>
 
@@ -70,11 +57,12 @@
      <h3>Get Your Initial Price Estimate Now!</h3>
      <p>Please Submit Your Free Hair Analysis Form</p>
      <form id="contactForm" name="serverless-form" action="https://hooks.zapier.com/hooks/catch/6789870/burnk2d/" method="POST">
-     <div class="form-field"><label>Full Name <span>:</span></label> <input type="text" id="fname" name="fname" value="John"></div>
-     <div class="form-field"><label>Country <span>:</span></label> <input type="text" id="lname" name="lname" value="Doe"></div>
+     <div class="form-field"><label>Full Name <span>:</span></label> <input type="text" id="fname" name="fname" placeholder="John"></div>
+     <div class="form-field"><label>Country <span>:</span></label> <input type="text" id="lname" name="lname" placeholder="Doe"></div>
      <div class="form-field"><label>Email Address <span>:</span></label> <input type="text" id="mail" name="mail" value="test@test.com"></div>
      <div class="form-field"><label>Phone Number <span>:</span></label> <input type="text" id="phone" name="phone" value="1234"></div>
      <button type="submit">Schedule an Appointment</button>
+	<input type="submit" value="Submit" id="Form-submit" />
      </form>
      </div>
      </div>
